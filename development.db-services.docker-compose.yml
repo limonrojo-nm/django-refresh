@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  postgresql:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: refresh
+      POSTGRES_PASSWORD: refresh
+      POSTGRES_DB: refresh
+    ports:
+      - 15432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    restart: "no"

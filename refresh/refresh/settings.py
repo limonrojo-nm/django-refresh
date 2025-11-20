@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -72,10 +74,21 @@ WSGI_APPLICATION = 'refresh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'refresh',  # Replace with your PostgreSQL database name
+        'USER': 'refresh',  # Replace with your PostgreSQL username
+        'PASSWORD': 'refresh',  # Replace with your PostgreSQL password
+        'HOST': 'localhost',  # Or the IP address/hostname of your PostgreSQL server
+        'PORT': '15432',       # Default PostgreSQL port
     }
 }
 
